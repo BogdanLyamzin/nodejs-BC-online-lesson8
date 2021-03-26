@@ -4,6 +4,17 @@ const getUsers = (params = {})=> {
     return User.find(params); // {name: "Herald"}
 };
 
+const getLimitUsers = (startPosition, limit)=> {
+    return User.find({status: "single"}, {skip: startPosition, limit}, (err, results)=> {
+
+    });
+
+    // const query = User.find({status: "single"}).sort("age", "asc");
+    // query.exec(()=> {
+
+    // })
+}
+
 const getUserById = (id)=> {
     return User.findById(id);
 };
